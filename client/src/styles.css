@@ -1,0 +1,84 @@
+:root {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #e6edf3;
+  background: #08111f;
+  line-height: 1.5;
+  font-weight: 400;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: radial-gradient(circle at top, #13233f 0%, #08111f 55%, #050b14 100%); min-height: 100vh; }
+a { color: inherit; text-decoration: none; }
+button, select { font: inherit; }
+
+.topbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 24px; position: sticky; top: 0; backdrop-filter: blur(12px);
+  background: rgba(5, 11, 20, 0.65); border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.brand { font-weight: 800; letter-spacing: 0.4px; }
+.navlinks { display: flex; gap: 14px; }
+.navlinks a { opacity: 0.75; }
+.nav-active { opacity: 1 !important; font-weight: 700; }
+
+.page-shell { max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; }
+.hero { padding: 24px 0 18px; }
+.hero.compact { padding-top: 8px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .2em; font-size: 12px; color: #7dd3fc; margin-bottom: 8px; }
+.hero h1 { margin: 0 0 10px; font-size: clamp(30px, 4vw, 48px); line-height: 1.05; }
+.muted { color: rgba(230,237,243,0.72); }
+.small { font-size: 12px; }
+
+.demo-grid {
+  display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-top: 18px;
+}
+.card, .panel, .info-panel {
+  background: rgba(12, 20, 36, 0.78); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 22px; box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+}
+.button-card, .link-card {
+  min-height: 130px; display: grid; place-items: center; cursor: pointer; font-weight: 700;
+}
+.primary { background: linear-gradient(135deg, #0f766e, #2563eb); }
+.image-card { padding: 0; overflow: hidden; }
+.image-card img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 130px; }
+.info-panel { padding: 20px; margin-top: 18px; }
+
+.dashboard-grid { display: grid; grid-template-columns: 1.1fr 1.2fr 1fr; gap: 18px; }
+.panel { padding: 18px; }
+.panel-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; gap: 12px; }
+.panel h2 { margin: 0; }
+.badge { padding: 6px 10px; border-radius: 999px; background: rgba(125, 211, 252, 0.14); color: #7dd3fc; }
+.list { display: flex; flex-direction: column; gap: 10px; }
+.list-item {
+  width: 100%; text-align: left; padding: 12px 14px; border-radius: 16px; border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.03); color: inherit; display: flex; justify-content: space-between; cursor: pointer;
+}
+.list-item.active { outline: 2px solid rgba(125, 211, 252, 0.55); }
+.timeline { display: flex; flex-direction: column; gap: 14px; max-height: 520px; overflow: auto; padding-right: 4px; }
+.timeline-item { display: flex; gap: 12px; align-items: flex-start; }
+.timeline-dot { width: 10px; height: 10px; margin-top: 6px; border-radius: 50%; background: #7dd3fc; box-shadow: 0 0 0 6px rgba(125, 211, 252, 0.12); }
+.heatmap-panel { min-height: 600px; }
+.heatmap-wrapper {
+  position: relative; height: 480px; overflow: hidden; border-radius: 18px;
+  background: linear-gradient(180deg, rgba(14, 27, 48, 0.9), rgba(7, 12, 22, 0.9));
+  border: 1px solid rgba(255,255,255,0.06); margin-bottom: 12px;
+}
+.heatmap-canvas { position: relative; width: 100%; height: 100%; }
+.heat-dot {
+  position: absolute; width: 18px; height: 18px; border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255,255,255,0.95) 0%, rgba(56,189,248,0.65) 42%, rgba(34,211,238,0.1) 75%, rgba(34,211,238,0) 100%);
+  box-shadow: 0 0 18px rgba(56,189,248,0.55);
+}
+.error-banner { margin: 10px 0 18px; padding: 12px 14px; border-radius: 14px; background: rgba(239, 68, 68, 0.12); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.18); }
+
+@media (max-width: 1000px) {
+  .demo-grid, .dashboard-grid { grid-template-columns: 1fr 1fr; }
+  .heatmap-panel { grid-column: span 2; }
+}
+@media (max-width: 700px) {
+  .demo-grid, .dashboard-grid { grid-template-columns: 1fr; }
+  .heatmap-panel { grid-column: span 1; }
+  .topbar { padding: 14px 16px; }
+  .page-shell { padding: 18px 16px 36px; }
+}
