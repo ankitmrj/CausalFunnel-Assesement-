@@ -270,15 +270,12 @@ GET /api/heatmap?page=/demo
 
 ### Demo Page
 
-![Demo Page](./screenshots/demo.png)
+![Demo Page](./screenshots/home.png)
 
 ### Dashboard
 
 ![Dashboard](./screenshots/dashboard.png)
 
-### User Journey
-
-![User Journey](./screenshots/journey.png)
 
 ### Heatmap
 
